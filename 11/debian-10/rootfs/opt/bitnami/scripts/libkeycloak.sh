@@ -95,14 +95,15 @@ keycloak_configure_database() {
 embed-server --server-config=${KEYCLOAK_CONF_FILE} --std-out=echo
 batch
 /subsystem=datasources/data-source=KeycloakDS: remove()
-/subsystem=datasources/data-source=KeycloakDS: add(jndi-name=java:jboss/datasources/KeycloakDS,enabled=true,use-java-context=true,use-ccm=true, connection-url=jdbc:mysql://${env.DB_ADDR:mysql}:${env.DB_PORT:3306}/${env.DB_DATABASE:keycloak}${env.JDBC_PARAMS:}, driver-name=mysql)
-/subsystem=datasources/data-source=KeycloakDS: write-attribute(name=user-name, value=${env.DB_USER:keycloak})
-/subsystem=datasources/data-source=KeycloakDS: write-attribute(name=password, value=${env.DB_PASSWORD:password})
+/subsystem=datasources/data-source=KeycloakDS: add(jndi-name=java:jboss/datasources/KeycloakDS,enabled=true,use-java-context=true,use-ccm=true, connection-url=jdbc:mysql://${KEYCLOAK_DATABASE_HOST}:${KEYCLOAK_DATABASE_PORT}/${KEYCLOAK_DATABASE_NAME}?serverTimezone=UTC&characterEncoding=utf-8&useSSL=false, driver-name=mysql)
+/subsystem=datasources/data-source=KeycloakDS: write-attribute(name=user-name, value=${KEYCLOAK_DATABASE_USER})
+/subsystem=datasources/data-source=KeycloakDS: write-attribute(name=password, value=${KEYCLOAK_DATABASE_PASSWORD})
 /subsystem=datasources/data-source=KeycloakDS: write-attribute(name=check-valid-connection-sql, value="SELECT 1")
 /subsystem=datasources/data-source=KeycloakDS: write-attribute(name=background-validation, value=true)
 /subsystem=datasources/data-source=KeycloakDS: write-attribute(name=background-validation-millis, value=60000)
 /subsystem=datasources/data-source=KeycloakDS: write-attribute(name=flush-strategy, value=IdleConnections)
 /subsystem=datasources/jdbc-driver=mysql:add(driver-name=mysql, driver-module-name=com.mysql.jdbc, driver-xa-datasource-class-name=com.mysql.cj.jdbc.MysqlXADataSource)
+/subsystem=keycloak-server/spi=connectionsJpa/provider=default:write-attribute(name=properties.schema,value=public)
 run-batch
 stop-embedded-server
 EOF
