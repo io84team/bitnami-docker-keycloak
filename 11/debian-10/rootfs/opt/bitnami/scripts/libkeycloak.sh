@@ -102,7 +102,6 @@ batch
 /subsystem=datasources/data-source=KeycloakDS: write-attribute(name=background-validation-millis, value=60000)
 /subsystem=datasources/data-source=KeycloakDS: write-attribute(name=flush-strategy, value=IdleConnections)
 /subsystem=datasources/jdbc-driver=mysql:add(driver-name=mysql, driver-module-name=com.mysql.jdbc, driver-xa-datasource-class-name=com.mysql.cj.jdbc.MysqlXADataSource)
-/subsystem=keycloak-server/spi=connectionsJpa/provider=default:write-attribute(name=properties.schema,value=public)
 run-batch
 stop-embedded-server
 EOF
