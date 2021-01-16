@@ -97,7 +97,6 @@ batch
 /subsystem=datasources/data-source=KeycloakDS: remove()
 /subsystem=datasources/data-source=KeycloakDS: add(jndi-name=java:jboss/datasources/KeycloakDS,enabled=true,use-java-context=true,use-ccm=true, connection-url=jdbc:mysql://${KEYCLOAK_DATABASE_HOST}:${KEYCLOAK_DATABASE_PORT}/${KEYCLOAK_DATABASE_NAME}?serverTimezone=UTC&characterEncoding=utf-8&useSSL=false, driver-name=mysql)
 /subsystem=datasources/data-source=KeycloakDS: write-attribute(name=user-name, value=${KEYCLOAK_DATABASE_USER})
-/subsystem=datasources/data-source=KeycloakDS: write-attribute(name=password, value=${KEYCLOAK_DATABASE_PASSWORD})
 /subsystem=datasources/data-source=KeycloakDS: write-attribute(name=check-valid-connection-sql, value="SELECT 1")
 /subsystem=datasources/data-source=KeycloakDS: write-attribute(name=background-validation, value=true)
 /subsystem=datasources/data-source=KeycloakDS: write-attribute(name=background-validation-millis, value=60000)
