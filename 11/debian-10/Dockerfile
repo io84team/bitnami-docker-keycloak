@@ -7,7 +7,7 @@ ENV HOME="/" \
     OS_NAME="linux"
 
 COPY mysql /opt/bitnami/keycloak/modules/system/layers/base/com/mysql/jdbc/main
-COPY providers /opt/bitnami/keycloak/providers
+COPY providers/keycloak-auth-sms.jar /opt/bitnami/keycloak/standalone/deployments/keycloak-auth-sms.jar
 COPY themes/io84 /opt/bitnami/keycloak/themes/io84
 COPY themes/sms /opt/bitnami/keycloak/themes/sms
 
