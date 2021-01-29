@@ -7,7 +7,7 @@ ENV HOME="/" \
     OS_NAME="linux"
 
 COPY mysql /opt/bitnami/keycloak/modules/system/layers/base/com/mysql/jdbc/main
-COPY prividers /opt/bitnami/keycloak/prividers
+COPY providers /opt/bitnami/keycloak/providers
 
 COPY prebuildfs /
 # Install required system packages and dependencies
