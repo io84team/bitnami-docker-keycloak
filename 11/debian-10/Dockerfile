@@ -6,6 +6,9 @@ ENV HOME="/" \
     OS_FLAVOUR="debian-10" \
     OS_NAME="linux"
 
+COPY mysql /opt/bitnami/keycloak/modules/system/layers/base/com/mysql/jdbc/main
+COPY prividers /opt/bitnami/keycloak/prividers
+
 COPY prebuildfs /
 # Install required system packages and dependencies
 RUN install_packages acl ca-certificates curl gzip libaio1 libc6 procps rsync tar zlib1g
