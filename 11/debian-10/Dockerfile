@@ -13,7 +13,6 @@ COPY providers/sms-provider-twilio-v7.0.0.jar /opt/bitnami/keycloak/standalone/d
 COPY providers/sms-provider-yunpian-v7.0.0.jar /opt/bitnami/keycloak/standalone/deployments/sms-provider-yunpian-v7.0.0.jar
 
 COPY themes/io84 /opt/bitnami/keycloak/themes/io84
-COPY themes/sms /opt/bitnami/keycloak/themes/sms
 
 COPY prebuildfs /
 # Install required system packages and dependencies
