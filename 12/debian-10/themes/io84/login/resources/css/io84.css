@@ -7,39 +7,47 @@
     border-radius: 1.2rem;
 }
 
-.form-control {
-    border-radius: 0.6rem;
+.pf-c-form-control {
+    border-radius: 0.6rem !important;
 }
 
-.btn {
-    border-radius: 0.6rem;
-    padding: 1rem;
+.pf-c-button {
+    border-radius: 0.6rem !important;
+    padding: 0.6rem !important;
 }
 
-.btn-primary {
-    background-color: #3b82f6;
-    background-image: none;
-    border: none;
-    color: #ffffff;
+.pf-m-primary {
+    background-color: #3b82f6 !important;
+    background-image: none !important;
+    border: none !important;
+    color: #ffffff !important;
 }
 
-.btn-primary:hover {
-    background-color: #1e6ff5;
-    background-image: none;
-    border: none;
-    color: #ffffff;
+.pf-m-primary:hover {
+    background-color: #1e6ff5 !important;
+    background-image: none !important;
+    border: none !important;
+    color: #ffffff !important;
 }
 
 .bs-sidebar {
     height: 100%;
 }
 
-.navbar-title {
-    background-image: none;
-    text-indent: 0;
-    color: #ffffff;
-    font-size: large;
-    padding: 0.5rem;
+.kc-logo-text,
+.kc-logo-text span {
+    background-image: none !important;
+    text-indent: 0 !important;
+    color: #ffffff !important;
+    font-size: xxx-large !important;
+    padding: 0.5rem !important;
+}
+
+.kc-logo-text span {
+    display: bloak !important;
+    text-indent: 0 !important;
+    color: #ffffff !important;
+    font-size: xxx-large !important;
 }
 
 body,
