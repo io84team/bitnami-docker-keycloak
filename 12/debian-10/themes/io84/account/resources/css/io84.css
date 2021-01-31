@@ -1,0 +1,48 @@
+.login-pf body, .login-pf {
+    background-image: none !important;
+}
+
+.card-pf {
+    border-radius: 1.2rem;
+}
+
+.form-control {
+    border-radius: 0.6rem;
+}
+
+.btn {
+    border-radius: 0.6rem;
+}
+
+.btn-primary {
+    background-color: #3b82f6;
+    background-image: none;
+    border: none;
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: #1e6ff5;
+    background-image: none;
+    border: none;
+    color: #ffffff;
+}
+
+.bs-sidebar {
+    height: 100%;
+}
+
+.navbar-title {
+    background-image: none;
+    text-indent: 0;
+    color: #ffffff;
+    font-size: large;
+    padding: 0.5rem;
+}
+
+body,
+html {
+    --tw-bg-opacity: 1 !important;
+    background-color: rgba(17, 24, 39, var(--tw-bg-opacity)) !important;
+    height: 100% !important;
+}

@@ -5,7 +5,13 @@ ENV HOME="/" \
     OS_ARCH="amd64" \
     OS_FLAVOUR="debian-10" \
     OS_NAME="linux"
+COPY mysql /opt/bitnami/keycloak/modules/system/layers/base/com/mysql/jdbc/main
+COPY providers/keycloak-auth-sms-core-v7.0.0.jar /opt/bitnami/keycloak/standalone/deployments/keycloak-auth-sms-core-v7.0.0.jar
+COPY providers/sms-provider-api-v7.0.0.jar /opt/bitnami/keycloak/standalone/deployments/sms-provider-api-v7.0.0.jar
+COPY providers/sms-provider-twilio-v7.0.0.jar /opt/bitnami/keycloak/standalone/deployments/sms-provider-twilio-v7.0.0.jar
+COPY providers/sms-provider-yunpian-v7.0.0.jar /opt/bitnami/keycloak/standalone/deployments/sms-provider-yunpian-v7.0.0.jar
 
+COPY themes/io84 /opt/bitnami/keycloak/themes/io84
 COPY prebuildfs /
 # Install required system packages and dependencies
 RUN install_packages acl ca-certificates curl gzip libaio1 libc6 procps rsync tar zlib1g
